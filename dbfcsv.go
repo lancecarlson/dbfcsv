@@ -5,7 +5,7 @@ import (
 	"os"
 	"flag"
 	"unicode/utf8"
-	"code.google.com/p/go-dbf/godbf"
+	"github.com/LindsayBradford/go-dbf/godbf"
 )
 
 func main() {
@@ -29,7 +29,7 @@ func main() {
 		fields := dbfTable.Fields()
 		fieldRow := make([]string, len(fields))
 		for i := 0; i < len(fields); i++ {
-			fieldRow[i] = fields[i].FieldName()
+			fieldRow[i] = fields[i].Name()
 		}
 		out.Write(fieldRow)
 		out.Flush()
